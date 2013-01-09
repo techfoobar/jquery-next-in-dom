@@ -27,7 +27,6 @@
 		var nid = $(), next = getNext(_subject, _lastNode), iters = 1;
 		$('html, body').addClass('cSeen');
 	    while(next.length != 0) {
-			console.log(next);
 			if(iters > _maxNodes) return $();
 			if(next.is(_selector)) {
 				nid = next;
@@ -67,7 +66,6 @@
 	function prevInDOM(_selector, _subject, _maxNodes, _firstNode) {
 	    var prev = getPrev(_subject, _firstNode), iters = 1;
 		while(prev.length != 0) {
-			console.log(prev);
 			if(iters > _maxNodes) return $();
 	    	if(prev.is(_selector)) return prev;
 	    	prev = getPrev(prev, _firstNode);
