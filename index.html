@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>jQuery Next-In-DOM - A plugin to get the next matching element regardless of DOM structure</title>
+<link rel="stylesheet" href="../jquery-style-listener/prettify/prettify.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body onload="prettyPrint()">
+
+<h2 class="main">jQuery Next-In-DOM</h2>
+<div class="content">
+    <div class="desc">
+    <strong>jQuery Next-In-DOM</strong>
+    is a jQuery plugin for getting the next or previous element in the full document matching a 
+    specified selector from an element. It basically traverses the whole DOM from the pivot element 
+    to find a matching element and returns the same if found. This is different from jQuery's built-in 
+    <a href="http://api.jquery.com/next/">next()</a> method which only returns the next or previous 
+    (matching) sibling of an element.    
+    </div>
+	<div class="desc">Tested on Firefox, Google Chrome and IE7 (and up). If you have any suggestions, comments or if you have found a bug, please send it to <a href="mailto:vjeleven@gmail.com">vjeleven@gmail.com</a></div>
+    <div class="desc">
+    Try out the demo below to see it in action. The source for the demo is on the right. 
+    </div>
+</div>
+<div class="main"><div class="content">Demonstration</div></div>
+<div class="content">
+	<div class="leftpane">
+		<div id="findprev" class="button">Find the <b>previous</b> matching <b>h2</b> from this button</div>
+		<div id="findnext" class="button">Find the <b>next</b> matching <b>a</b> from this button</div>
+		<div id="resetactive" class="button">Reset Highlight</div>
+	</div>
+	<div class="rightpane">
+	   <pre class="prettyprint">// Find the <b>previous</b> matching <b>h3</b> from this button
+var prevH3 = $(this).prevInDOM('h2');
+    
+// Find the <b>next</b> matching <b>a</b> from this button
+var nextA = $(this).nextInDOM('a');
+</pre>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="main contd"><div class="content">Download</div></div>
+<div class="content">
+    <div class="desc">
+    <a href="nextindom.jquery.min.js">Download</a> ~ 2.1 Kb - <i>Last Updated: Jan 9, 2013</i><br>
+	GitHub - <a href="https://github.com/techfoobar/jquery-next-in-dom">https://github.com/techfoobar/jquery-next-in-dom</a>
+    </div>
+</div>
+<div class="main contd"><div class="content">Usage</div></div>
+<div class="content">
+    <ol class="desc">
+    <li>Include the script on your page:<br>
+    <pre class="prettyprint full">&lt;script src="/path/to/nextindom.jquery.min.js"&gt;&lt;/script&gt;</pre>
+    </li>
+    <li>Once the DOM is ready (or anytime thereafter), you can call the methods:<br>
+    <pre class="prettyprint full">
+
+// get the previous element from the element matching 'selector1' (but not including)
+// regardless of the DOM structure
+var prev1 = $('selector1').prevInDOM();
+
+// get the previous element from 'selector1' matching 'selector2'
+var prev2 = $('selector1').prevInDOM('selector2');
+    
+// get the next element from the element matching 'selector1' (but not including)
+// regardless of the DOM structure
+var next1 = $('selector1').nextInDOM();
+
+// get the next element from 'selector1' matching 'selector2'
+var next21 = $('selector1').nextInDOM('selector2');
+
+</pre>
+    </li>
+    </ol>
+</div>
+<div class="main contd"><div class="content">Thanks</div></div>
+<div class="content">
+    <div class="desc">
+    Thanks to <a href="http://ejohn.org/">John Resig</a> for creating <a href="http://jquery.com/">jQuery</a>. IMHO, it is as world-changing as a JS library can ever expect to become.<br>
+    Thanks to <a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a> for the super-simple-to-use-and-customize syntax highlighter and for the Vim Sunburst theme.<br>
+    Thanks to <a href="http://refresh-sf.com/yui/">refresh-sf.com</a> for making <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> available online.</div>
+</div>
+<div class="main contd"><div class="content">About Me</div></div>
+<div class="content">
+    <div class="desc">
+    I am Vijayakrishnan Krishnan. My main area of interest is JavaScript, jQuery, CSS and the awesome things we can achieve with them in combo. I currently work at <a href="http://devicedriven.com">DeviceDriven</a> with an amazing team of 
+    engineers covering JS, CSS on the user side to Groovy on Grails, Spring and Hibernate on the server side.
+    </div>
+    <div class="desc">
+    <a href="http://www.techfoobar.com/about-me">Blog (very inactive!)</a>
+    &nbsp;|&nbsp;
+    <a href="http://stackoverflow.com/users/921204/techfoobar">StackOverflow</a>
+    &nbsp;|&nbsp;
+    <a href="http://www.linkedin.com/in/vjeleven">LinkedIn</a>
+	&nbsp;|&nbsp;
+    <a href="mailto:vjeleven@gmail.com">Email</a>
+    </div>
+</div>
+<script src="../jquery-style-listener/jquery.js"></script>
+<script src="../jquery-style-listener/prettify/prettify.js"></script>
+<script src="nextindom.jquery.js"></script>
+<script src="demo.js"></script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26067530-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
